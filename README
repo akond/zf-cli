@@ -1,1 +1,8 @@
-This is a readme file
+This is a command-line interface to Zend Framework application in its simple form.
+
+Go to the bin directory and execute: `php cli.php`
+This will execute index action in index controller from application/controllers-cli/IndexController.php
+
+`php cli.php index info` will execute info action in index controller.
+
+Everything is pretty self-explanatory.
