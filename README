@@ -1,8 +1,10 @@
-This is a command-line interface to Zend Framework application in its simple form.
+This is a simple command-line interface to Zend Framework application.
 
 Go to the bin directory and execute: `php cli.php`
-This will execute index action in index controller from application/controllers-cli/IndexController.php
+This command executes the index action of the index controller from 
+application/controllers-cli/IndexController.php
 
-`php cli.php index info` will execute info action in index controller.
+`php cli.php index info` executes the info action of the index controller.
 
-Everything is pretty self-explanatory.
+------------------------------------------------------------------------------
+This code is Unlicensed (go to http://unlicense.org/ for further information).
