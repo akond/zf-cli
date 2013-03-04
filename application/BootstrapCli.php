@@ -12,6 +12,7 @@ class BootstrapCli extends Zend_Application_Bootstrap_Bootstrap
 		$this->bootstrap ('frontcontroller');
 
 		$this->getResource ('frontcontroller')
+			->setResponse(new Zend_Controller_Response_Cli())
 			->setRouter (new Application_Router_Cli ())
 			->setRequest (new Zend_Controller_Request_Simple ());
 	}
