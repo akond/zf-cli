@@ -62,7 +62,7 @@ class Application_Controller_Cli extends Zend_Controller_Action
 		}
 
 		$line = fgets ($this->stdin);
-		$line = trim ($line, "\n");
+		$line = trim ($line);
 
 		if ('' == $line)
 		{
