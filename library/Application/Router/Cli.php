@@ -11,14 +11,14 @@ class Application_Router_Cli extends Zend_Controller_Router_Abstract
 	{
 		$getopt = new Zend_Console_Getopt (array ());
 		$arguments = $getopt->getRemainingArgs ();
-
+		
 		$controller = 'index';
 		$action = 'index';
-
+		
 		if ($arguments)
 		{
 			$controller = array_shift ($arguments);
-
+			
 			if ($arguments)
 			{
 				$action = array_shift ($arguments);
@@ -27,21 +27,27 @@ class Application_Router_Cli extends Zend_Controller_Router_Abstract
 				{
 					echo "Invalid action $action.\n", exit ();
 				}
-
-		                if ( !empty($arguments) ) {
-		                    foreach ($arguments as $arg ) {
-		                        $arg_pair = explode('=', $arg);
-		                        if ( 2 === count($arg_pair) ) {
-		                            $dispatcher->setParam($arg_pair[0], $arg_pair[1]);
-		                        }
-		                    }
-		                }				
+				
+				if ($arguments)
+				{
+					foreach ($arguments as $arg)
+					{
+						$parameter = explode ('=', $arg, 2);
+						if (false == isset ($parameter [1]))
+						{
+							$parameter [1] = true;
+						}
+						
+						$dispatcher->setParam ($parameter [0], $parameter [1]);
+						unset ($parameter);
+					}
+				}
 			}
 		}
-
+		
 		$dispatcher->setControllerName ($controller)
 			->setActionName ($action);
-
+		
 		return $dispatcher;
 	}
 
