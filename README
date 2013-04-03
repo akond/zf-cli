@@ -5,6 +5,7 @@ This command executes the index action of the index controller from
 application/controllers-cli/IndexController.php
 
 `php cli.php index info` executes the info action of the index controller.
-
+`php cli.php index info KEY=VALUE` adds the parameter to the requst.
+`php cli.php index info KEY` adds the boolean parameter equal TRUE to the requst.
 ------------------------------------------------------------------------------
 This code is Unlicensed (go to http://unlicense.org/ for further information).
